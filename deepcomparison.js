@@ -11,7 +11,7 @@ function deepEqual(x, y) {
         for(var i = 0; i < xProps.length; i++) {
             var propName = xProps[i];
 
-            if(x.propName != y.propName) {
+            if(typeof x[propName] != "object" && typeof y[propName] != "object" && x[propName] != y[propName]) {
                 return false;
             } else {
                 return deepEqual(x[propName], y[propName]);
